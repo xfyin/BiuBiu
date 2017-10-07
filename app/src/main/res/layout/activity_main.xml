@@ -1,19 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="letus179.com.biubiu.MainActivity">
+<letus179.com.biubiu.common.SlidingMenu xmlns:android="http://schemas.android.com/apk/res/android"
+                                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                                        android:id="@+id/id_menu"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:scrollbars="none">
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-</android.support.constraint.ConstraintLayout>
+        <!--侧滑菜单-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:orientation="vertical">
+
+            <android.support.design.widget.NavigationView
+                android:id="@+id/nav_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:headerLayout="@layout/nav_slide_header"
+                app:menu="@menu/nav_menu"/>
+
+            <LinearLayout
+                android:id="@+id/bottom_setting"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/nav_view"
+                android:layout_gravity="center"
+                android:background="#fff"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/setting"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/setting"
+                    android:gravity="center_vertical"
+                    android:text="@string/setting"/>
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@color/light_gray"/>
+
+                <TextView
+                    android:id="@+id/scan"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/scan"
+                    android:gravity="center_vertical"
+                    android:text="@string/scan"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!--底部导航-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/main_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"/>
+
+            <view
+                android:id="@+id/main_tab"
+                class="android.support.v4.app.FragmentTabHost"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"/>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</letus179.com.biubiu.common.SlidingMenu>

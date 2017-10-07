@@ -16,6 +16,30 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".login.LoginActivity"
+            android:launchMode="singleTask">
+        </activity>
+        <activity
+            android:name=".login.RegisterActivity"
+            android:launchMode="singleTask">
+        </activity>
+        <activity
+            android:name=".login.RegisterMainActivity"
+            android:launchMode="singleTask">
+        </activity>
+        <activity
+            android:name=".login.GetBackPwdActivity"
+            android:launchMode="singleTask">
+        </activity>
+        <activity
+            android:name=".login.RegisterProtocolActivity"
+            android:launchMode="singleTask">
+        </activity>
+        <activity android:name=".myall.MySettingActivity">
+        </activity>
+        <activity android:name=".search.SearchActivity">
+        </activity>
     </application>
 
 </manifest>

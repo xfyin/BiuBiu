@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
 
+def getTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getDefault());
+}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -17,6 +21,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    //打包后应用名称
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            def fileName
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                if ('release'.equals(variant.buildType.name)) {
+                    fileName = "giveme5-RELEASE${defaultConfig.versionName}.${getTime()}.apk"
+                } else if ('debug'.equals(variant.buildType.name)) {
+                    fileName = "giveme5-DEBUG${defaultConfig.versionName}.${getTime()}.apk"
+                }
+                output.outputFile = new File(outputFile.parent, fileName)
+            }
+
+        }
+    }
 }
 
 dependencies {
@@ -26,5 +47,10 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:25.3.1'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.necer.ndialog2:ndialog:1.0.2'
+    compile 'liji.library.dev:citypickerview:0.7.0'
+    compile 'com.nineoldandroids:library:2.4.0'
     testCompile 'junit:junit:4.12'
 }

@@ -1,0 +1,118 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="top"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="5"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/input_height">
+
+            <EditText
+                android:id="@+id/code_text"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/code"
+                android:inputType="number"
+                android:textColorHint="@color/hint_color"
+                android:textSize="16sp"/>
+
+            <Button
+                android:id="@+id/obtain_code"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="@string/code_obtain"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/light_gray"/>
+
+        <letus179.com.biubiu.edit.ClearEditText
+            android:id="@+id/pwd_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/input_height"
+            android:layout_marginBottom="5dp"
+            android:background="@null"
+            android:hint="@string/register_pwd"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColorHint="@color/hint_color"
+            android:textSize="16sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/light_gray"/>
+
+        <letus179.com.biubiu.edit.ClearEditText
+            android:id="@+id/pwd_text_again"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/input_height"
+            android:layout_marginBottom="5dp"
+            android:background="@null"
+            android:hint="@string/register_pwd_again"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColorHint="@color/hint_color"
+            android:textSize="16sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/light_gray"/>
+
+        <Button
+            android:id="@+id/register_complete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register_complete"
+            android:textColor="@color/button_text"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/input_height">
+
+            <CheckBox
+                android:id="@+id/agree_protocol"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/register_tip"/>
+
+            <TextView
+                android:id="@+id/register_protocol"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/register_protocol"
+                android:textColor="@color/login_tip"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
