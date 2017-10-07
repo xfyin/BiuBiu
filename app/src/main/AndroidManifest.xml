@@ -40,6 +40,10 @@
         </activity>
         <activity android:name=".search.SearchActivity">
         </activity>
+        <activity android:name=".myall.MyAccountActivity">
+        </activity>
+        <activity android:name=".myall.MyAccountPhoneActivity">
+        </activity>
     </application>
 
 </manifest>

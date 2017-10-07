@@ -23,7 +23,7 @@ public class ValidatorUtils {
     /**
      * 正则表达式：验证密码
      */
-    public static final String REGEX_PASSWORD = "^[a-zA-Z0-9]{6,16}$";
+    public static final String REGEX_PASSWORD = "^[a-zA-Z0-9_]{6,12}$";
 
     /**
      * 移动手机号码的正则表达式。

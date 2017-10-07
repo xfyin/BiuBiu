@@ -10,15 +10,15 @@ import letus179.com.biubiu.MainActivity;
 import letus179.com.biubiu.R;
 import letus179.com.biubiu.common.BasicActivity;
 
-public class MySettingActivity extends BasicActivity implements View.OnClickListener {
+public class MyAccountActivity extends BasicActivity implements View.OnClickListener{
 
-    // 我的账户与安全
-    private LinearLayout my_account_safe;
+    // 绑定手机号
+    private LinearLayout my_account_phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_setting);
+        setContentView(R.layout.activity_my_account);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -27,7 +27,7 @@ public class MySettingActivity extends BasicActivity implements View.OnClickList
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MySettingActivity.this, MainActivity.class);
+                Intent intent = new Intent(MyAccountActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
                 overridePendingTransition(R.anim.left_slide_in, R.anim.right_slide_out);
@@ -42,9 +42,9 @@ public class MySettingActivity extends BasicActivity implements View.OnClickList
     public void onClick(View v) {
         Intent intent;
         switch (v.getId()) {
-            case R.id.my_account_safe:
-                intent = new Intent(MySettingActivity.this, MyAccountActivity.class);
-                intent.putExtra("title", "账户与安全");
+            case R.id.my_account_phone:
+                intent = new Intent(MyAccountActivity.this, MyAccountPhoneActivity.class);
+                intent.putExtra("title", "绑定手机号");
                 startActivity(intent);
                 break;
             default:
@@ -52,14 +52,9 @@ public class MySettingActivity extends BasicActivity implements View.OnClickList
         }
     }
 
-
-    /**
-     * 初始化布局并设置点击事件
-     */
     private void initViewAndClick() {
-        my_account_safe = (LinearLayout) findViewById(R.id.my_account_safe);
+        my_account_phone = (LinearLayout) findViewById(R.id.my_account_phone);
 
-        my_account_safe.setOnClickListener(this);
+        my_account_phone.setOnClickListener(this);
     }
-
 }

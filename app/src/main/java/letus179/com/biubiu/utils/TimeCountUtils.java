@@ -32,20 +32,21 @@ public class TimeCountUtils extends CountDownTimer {
         // 按钮不能点击
         btn.setClickable(false);
         // 设置倒计时间
-        btn.setText(millisUntilFinished / 1000 + "秒后可重新发送");
+        btn.setText("已发送(" + millisUntilFinished / 1000 + "s)");
+        btn.setAllCaps(false);
         // 设置按钮背景色为灰色
         btn.setBackgroundColor(ResourcesCompat.getColor(mActivity.getResources(), R.color.clr_normal, null));
 
         // 获取按钮的文字
         Spannable span = new SpannableString(btn.getText().toString());
         // 将倒计时时间显示为红色
-        span.setSpan(new ForegroundColorSpan(Color.RED), 0 , 2, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+        span.setSpan(new ForegroundColorSpan(Color.RED), 4, 7, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
         btn.setText(span);
     }
 
     @Override
     public void onFinish() {
-        btn.setText("重新获取验证码");
+        btn.setText("重新获取");
         btn.setClickable(true);
         btn.setBackgroundColor(ResourcesCompat.getColor(mActivity.getResources(), R.color.clr_normal, null));
     }
