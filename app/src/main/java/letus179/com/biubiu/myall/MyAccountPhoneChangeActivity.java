@@ -98,8 +98,8 @@ public class MyAccountPhoneChangeActivity extends BasicActivity implements View.
                 // 2，校验验证码是否正确
                 String code = my_account_phone_change_code.getText().toString();
                 // 3存储并设置
-                Toast.makeText(this, "新手机号：" + newPhone + "\n验证码：" +code + "\n密码：" + pwd, Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(this, "新手机号：" + newPhone + "\n验证码：" + code + "\n密码：" + pwd, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "更换手机号：" + newPhone + "成功", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent();
                 intent.putExtra("phone", newPhone);
                 setResult(RESULT_OK, intent);

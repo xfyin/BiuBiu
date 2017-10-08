@@ -95,6 +95,7 @@ public class MyAccountPhoneActivity extends BasicActivity implements View.OnClic
                 // TODO: 2017/10/8
                 Toast.makeText(this, "手机号：" + phone + "\n验证码：" + my_account_phone_code.getText().toString() + "\n密码：" + pwd, Toast.LENGTH_SHORT).show();
 
+                Toast.makeText(this, "绑定手机号：" + phone + "成功", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent();
                 intent.putExtra("phone", phone);
                 setResult(RESULT_OK, intent);

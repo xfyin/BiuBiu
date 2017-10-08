@@ -13,8 +13,8 @@ import letus179.com.biubiu.common.Constants;
 
 public class MyAccountActivity extends BasicActivity implements View.OnClickListener{
 
-    // 绑定手机号
-    private LinearLayout my_account_phone;
+    // 绑定手机号, 修改密码
+    private LinearLayout my_account_phone, my_account_pwd;
 
     // 绑定的手机号显示 “去绑定或者更滑号码”， 展示绑定的手机号
     private TextView my_account_phone_bingding, my_account_phone_show;
@@ -59,7 +59,11 @@ public class MyAccountActivity extends BasicActivity implements View.OnClickList
                     intent.putExtra("old_phone", my_account_phone_show.getText().toString());
                     startActivityForResult(intent, Constants.CHANGE_BINGDING_PHONE_NUM);
                 }
-
+                break;
+            case R.id.my_account_pwd:
+                intent = new Intent(MyAccountActivity.this, MyAccountPwdActivity.class);
+                intent.putExtra("title", "修改密码");
+                startActivity(intent);
                 break;
             default:
                 break;
@@ -84,9 +88,15 @@ public class MyAccountActivity extends BasicActivity implements View.OnClickList
     }
 
     private void initViewAndClick() {
+        //手机号
         my_account_phone = (LinearLayout) findViewById(R.id.my_account_phone);
         my_account_phone_bingding = (TextView) findViewById(R.id.my_account_phone_bingding);
         my_account_phone_show = (TextView) findViewById(R.id.my_account_phone_show);
         my_account_phone.setOnClickListener(this);
+
+        // 密码
+        my_account_pwd = (LinearLayout) findViewById(R.id.my_account_pwd);
+        my_account_pwd.setOnClickListener(this);
+
     }
 }

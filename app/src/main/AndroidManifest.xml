@@ -54,6 +54,8 @@
         </activity>
         <activity android:name=".myall.MyAccountPhoneChangeActivity">
         </activity>
+        <activity android:name=".myall.MyAccountPwdActivity">
+        </activity>
     </application>
 
 </manifest>
