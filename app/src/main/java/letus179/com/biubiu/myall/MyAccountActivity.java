@@ -16,8 +16,8 @@ public class MyAccountActivity extends BasicActivity implements View.OnClickList
     // 绑定手机号
     private LinearLayout my_account_phone;
 
-    // 绑定的手机号显示 “去绑定或者具体手机号”
-    private TextView my_account_phone_bingding;
+    // 绑定的手机号显示 “去绑定或者更滑号码”， 展示绑定的手机号
+    private TextView my_account_phone_bingding, my_account_phone_show;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +48,18 @@ public class MyAccountActivity extends BasicActivity implements View.OnClickList
         Intent intent;
         switch (v.getId()) {
             case R.id.my_account_phone:
-                intent = new Intent(MyAccountActivity.this, MyAccountPhoneActivity.class);
-                intent.putExtra("title", "绑定手机号");
-                startActivityForResult(intent, Constants.BINGDING_PHONE_NUM);
+                String bingding = my_account_phone_bingding.getText().toString();
+                if ("去绑定".equals(bingding)) {
+                    intent = new Intent(MyAccountActivity.this, MyAccountPhoneActivity.class);
+                    intent.putExtra("title", "绑定手机号");
+                    startActivityForResult(intent, Constants.BINGDING_PHONE_NUM);
+                } else if ("更换号码".equals(bingding)) {
+                    intent = new Intent(MyAccountActivity.this, MyAccountPhoneChangeActivity.class);
+                    intent.putExtra("title", "更换绑定手机");
+                    intent.putExtra("old_phone", my_account_phone_show.getText().toString());
+                    startActivityForResult(intent, Constants.CHANGE_BINGDING_PHONE_NUM);
+                }
+
                 break;
             default:
                 break;
@@ -63,8 +72,10 @@ public class MyAccountActivity extends BasicActivity implements View.OnClickList
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case Constants.BINGDING_PHONE_NUM:
-                    String phone = data.getStringExtra("phone");
-                    my_account_phone_bingding.setText(phone.substring(0, 3) + "****" + phone.substring(7));
+                case Constants.CHANGE_BINGDING_PHONE_NUM:
+                    my_account_phone_bingding.setText("更换号码");
+                    my_account_phone_show.setVisibility(View.VISIBLE);
+                    my_account_phone_show.setText(data.getStringExtra("phone"));
                     break;
                 default:
                     break;
@@ -75,6 +86,7 @@ public class MyAccountActivity extends BasicActivity implements View.OnClickList
     private void initViewAndClick() {
         my_account_phone = (LinearLayout) findViewById(R.id.my_account_phone);
         my_account_phone_bingding = (TextView) findViewById(R.id.my_account_phone_bingding);
+        my_account_phone_show = (TextView) findViewById(R.id.my_account_phone_show);
         my_account_phone.setOnClickListener(this);
     }
 }

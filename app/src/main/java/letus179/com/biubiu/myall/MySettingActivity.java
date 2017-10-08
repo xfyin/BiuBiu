@@ -6,7 +6,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import letus179.com.biubiu.MainActivity;
 import letus179.com.biubiu.R;
 import letus179.com.biubiu.common.BasicActivity;
 

@@ -52,6 +52,8 @@
             android:name=".myall.MyAccountPhoneActivity"
             android:launchMode="singleTask">
         </activity>
+        <activity android:name=".myall.MyAccountPhoneChangeActivity">
+        </activity>
     </application>
 
 </manifest>

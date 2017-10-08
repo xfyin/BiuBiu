@@ -13,21 +13,42 @@
     <LinearLayout
         android:id="@+id/my_account_phone"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="15dp">
+        android:layout_height="35dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp">
 
-        <TextView
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="绑定手机"
-            android:textSize="12sp"/>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="绑定手机"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/my_account_phone_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:gravity="center_vertical"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+        </LinearLayout>
+
 
         <TextView
             android:id="@+id/my_account_phone_bingding"
             android:layout_width="wrap_content"
             android:layout_height="15dp"
+            android:layout_gravity="center_vertical"
             android:drawableRight="@drawable/right_arrow"
             android:text="去绑定"
             android:textSize="10sp"/>
@@ -41,8 +62,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="15dp">
+        android:layout_height="35dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp">
 
         <TextView
             android:layout_width="0dp"
@@ -101,6 +125,11 @@
             android:text="QQ账号"/>
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.25dp"
+        android:background="@color/light_gray"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="30dp"
@@ -115,6 +144,11 @@
             android:gravity="center_vertical"
             android:text="微信账号"/>
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.25dp"
+        android:background="@color/light_gray"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -131,4 +165,8 @@
             android:text="新浪微博"/>
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.25dp"
+        android:background="@color/light_gray"/>
 </LinearLayout>
