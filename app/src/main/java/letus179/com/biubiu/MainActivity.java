@@ -29,7 +29,6 @@ public class MainActivity extends BasicActivity implements TabHost.OnTabChangeLi
         initTab();
         //默认选中
         mTabHost.onTabChanged(TabDb.getTabsTxt()[0]);
-
     }
 
     @Override

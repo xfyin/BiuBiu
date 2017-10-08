@@ -9,4 +9,9 @@ package letus179.com.biubiu.common;
 public class Constants {
 
 
+    // 绑定手机号
+    public static final int BINGDING_PHONE_NUM = 0;
+
+    // 从"设置"Activity返回“我的”MyFragment
+    public static final int FROM_SETTING_TO_MYFRAGMENT = 1;
 }

@@ -36,13 +36,21 @@
             android:name=".login.RegisterProtocolActivity"
             android:launchMode="singleTask">
         </activity>
-        <activity android:name=".myall.MySettingActivity">
+        <activity
+            android:name=".myall.MySettingActivity"
+            android:launchMode="singleTask">
         </activity>
-        <activity android:name=".search.SearchActivity">
+        <activity
+            android:name=".search.SearchActivity"
+            android:launchMode="singleTask">
         </activity>
-        <activity android:name=".myall.MyAccountActivity">
+        <activity
+            android:name=".myall.MyAccountActivity"
+            android:launchMode="singleTask">
         </activity>
-        <activity android:name=".myall.MyAccountPhoneActivity">
+        <activity
+            android:name=".myall.MyAccountPhoneActivity"
+            android:launchMode="singleTask">
         </activity>
     </application>
 

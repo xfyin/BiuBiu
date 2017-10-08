@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import letus179.com.biubiu.MainActivity;
 import letus179.com.biubiu.R;
 import letus179.com.biubiu.common.BasicActivity;
 import letus179.com.biubiu.edit.ClearEditText;
@@ -35,12 +34,13 @@ public class MyAccountPhoneActivity extends BasicActivity implements View.OnClic
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        String title = getIntent().getStringExtra("search_title");
+        String title = getIntent().getStringExtra("title");
         setupBackAsUp(title, true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MyAccountPhoneActivity.this, MainActivity.class);
+                Intent intent = new Intent(MyAccountPhoneActivity.this, MyAccountActivity.class);
+                intent.putExtra("title", "账户与安全");
                 startActivity(intent);
                 finish();
                 overridePendingTransition(R.anim.left_slide_in, R.anim.right_slide_out);
@@ -95,6 +95,10 @@ public class MyAccountPhoneActivity extends BasicActivity implements View.OnClic
                 // TODO: 2017/10/8
                 Toast.makeText(this, "手机号：" + phone + "\n验证码：" + my_account_phone_code.getText().toString() + "\n密码：" + pwd, Toast.LENGTH_SHORT).show();
 
+                Intent intent = new Intent();
+                intent.putExtra("phone", phone);
+                setResult(RESULT_OK, intent);
+                finish();
                 break;
             default:
                 break;

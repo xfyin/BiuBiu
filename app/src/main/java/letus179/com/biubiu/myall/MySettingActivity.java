@@ -22,13 +22,12 @@ public class MySettingActivity extends BasicActivity implements View.OnClickList
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        String title = getIntent().getStringExtra("search_title");
+        String title = getIntent().getStringExtra("title");
         setupBackAsUp(title, true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MySettingActivity.this, MainActivity.class);
-                startActivity(intent);
+                setResult(RESULT_OK, new Intent());
                 finish();
                 overridePendingTransition(R.anim.left_slide_in, R.anim.right_slide_out);
             }

@@ -1,6 +1,5 @@
 package letus179.com.biubiu.bottomNav;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,7 +13,10 @@ import android.widget.TextView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import letus179.com.biubiu.R;
+import letus179.com.biubiu.common.Constants;
 import letus179.com.biubiu.myall.MySettingActivity;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * 底部导航栏--我的
@@ -40,12 +42,6 @@ public class MyFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        ActionBar actionBar = getActivity().getActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayShowTitleEnabled(false);
-            actionBar.setDisplayShowHomeEnabled(false);
-        }
-
         View view = inflater.inflate(R.layout.my_fragment, container, false);
         initViews(view);
         return view;
@@ -62,9 +58,8 @@ public class MyFragment extends Fragment implements View.OnClickListener {
             case R.id.my_all_setting:
                 // 设置
                 intent = new Intent(getActivity(), MySettingActivity.class);
-                intent.putExtra("search_title", "设置");
-                startActivity(intent);
-                getActivity().finish();
+                intent.putExtra("title", "设置");
+                startActivityForResult(intent, Constants.FROM_SETTING_TO_MYFRAGMENT);
                 break;
             case R.id.my_all_info:
                 break;
@@ -91,6 +86,19 @@ public class MyFragment extends Fragment implements View.OnClickListener {
             default:
                 break;
 
+        }
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            switch (requestCode) {
+                case Constants.FROM_SETTING_TO_MYFRAGMENT:
+//                    Toast.makeText(getActivity(), "sss", Toast.LENGTH_SHORT).show();
+                    break;
+            }
         }
 
     }

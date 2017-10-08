@@ -25,6 +25,7 @@
             android:textSize="12sp"/>
 
         <TextView
+            android:id="@+id/my_account_phone_bingding"
             android:layout_width="wrap_content"
             android:layout_height="15dp"
             android:drawableRight="@drawable/right_arrow"
