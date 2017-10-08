@@ -17,4 +17,8 @@ public class Constants {
 
     // 从"设置"Activity返回“我的”MyFragment
     public static final int FROM_SETTING_TO_MYFRAGMENT = 2;
+
+    // 增加地址
+    public static final int ADD_MY_ADDRESS = 3;
+
 }

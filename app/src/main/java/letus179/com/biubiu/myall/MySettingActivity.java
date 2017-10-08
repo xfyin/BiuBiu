@@ -15,8 +15,8 @@ public class MySettingActivity extends BasicActivity implements View.OnClickList
     // 我的账户与安全
     private LinearLayout my_account_safe;
 
-    // 消息通知
-    private TextView my_account_notify;
+    // 消息通知, 黑名单, 收货地址
+    private TextView my_account_notify, my_account_blacklist, my_account_address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +53,17 @@ public class MySettingActivity extends BasicActivity implements View.OnClickList
                 intent = new Intent(MySettingActivity.this, MyNotifyActivity.class);
                 intent.putExtra("title", "消息通知");
                 startActivity(intent);
+                break;
+            case R.id.my_account_blacklist:
+                intent = new Intent(MySettingActivity.this, MyBlacklistActivity.class);
+                intent.putExtra("title", "黑名单");
+                startActivity(intent);
+                break;
+            case R.id.my_account_address:
+                intent = new Intent(MySettingActivity.this, MyAddressActivity.class);
+                intent.putExtra("title", "管理收货地址");
+                startActivity(intent);
+                break;
             default:
                 break;
         }
@@ -65,8 +76,12 @@ public class MySettingActivity extends BasicActivity implements View.OnClickList
     private void initViewAndClick() {
         my_account_safe = (LinearLayout) findViewById(R.id.my_account_safe);
         my_account_notify = (TextView) findViewById(R.id.my_account_notify);
+        my_account_blacklist = (TextView) findViewById(R.id.my_account_blacklist);
+        my_account_address = (TextView) findViewById(R.id.my_account_address);
         my_account_safe.setOnClickListener(this);
         my_account_notify.setOnClickListener(this);
+        my_account_blacklist.setOnClickListener(this);
+        my_account_address.setOnClickListener(this);
     }
 
 }

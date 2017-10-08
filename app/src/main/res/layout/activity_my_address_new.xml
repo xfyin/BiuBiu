@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="top"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.25dp"
+        android:background="@color/light_gray"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical|right"
+                android:text="收货人"/>
+
+            <letus179.com.biubiu.edit.ClearEditText
+                android:id="@+id/my_address_receiver"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/input_height"
+                android:background="@null"
+                android:hint="填写姓名"
+                android:maxLength="12"
+                android:textColorHint="@color/light_grey"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.25dp"
+            android:background="@color/light_gray"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical|right"
+                android:text="联系电话"/>
+
+            <letus179.com.biubiu.edit.ClearEditText
+                android:id="@+id/my_address_phone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/input_height"
+                android:background="@null"
+                android:hint="填写手机号"
+                android:inputType="number"
+                android:maxLength="11"
+                android:textColorHint="@color/light_grey"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.25dp"
+            android:background="@color/light_gray"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical|right"
+                android:text="所在地区"/>
+
+            <EditText
+                android:id="@+id/my_address_location"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@null"
+                android:drawableRight="@drawable/right_arrow"
+                android:hint="请选择"
+                android:textColorHint="@color/light_grey"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.25dp"
+            android:background="@color/light_gray"/>
+
+        <letus179.com.biubiu.edit.ClearEditText
+            android:id="@+id/my_address_detail"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:gravity="start"
+            android:hint="请填写详细地址，长度不应小于5"
+            android:maxLines="3"
+            android:paddingTop="15dp"
+            android:textColorHint="@color/light_grey"
+            android:textSize="14sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.25dp"
+            android:background="@color/light_gray"/>
+
+        <Button
+            android:id="@+id/my_address_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:enabled="false"
+            android:text="@string/make_sure"/>
+    </LinearLayout>
+</LinearLayout>

@@ -64,6 +64,18 @@
             android:name=".myall.MyNotifyActivity"
             android:launchMode="singleTask">
         </activity>
+        <activity
+            android:name=".myall.MyBlacklistActivity"
+            android:launchMode="singleTask">
+        </activity>
+        <activity
+            android:name=".myall.MyAddressActivity"
+            android:launchMode="singleTask">
+        </activity>
+        <activity
+            android:name=".myall.MyAddressNewActivity"
+            android:launchMode="singleTask">
+        </activity>
     </application>
 
 </manifest>
