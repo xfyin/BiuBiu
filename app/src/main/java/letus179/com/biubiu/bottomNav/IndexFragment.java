@@ -27,8 +27,8 @@ public class IndexFragment extends Fragment implements View.OnClickListener {
 
         final View view = inflater.inflate(R.layout.index_fragment, container, false);
         slidingMenu = (SlidingMenu) getActivity().findViewById(R.id.id_menu);
-        TextView view1 = (TextView) view.findViewById(R.id.index_toggle_menu);
-        view1.setOnClickListener(new View.OnClickListener() {
+        TextView index_toggle_menu = (TextView) view.findViewById(R.id.index_toggle_menu);
+        index_toggle_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 slidingMenu.toggle();

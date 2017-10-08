@@ -1,5 +1,6 @@
 package letus179.com.biubiu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.content.res.ResourcesCompat;
@@ -10,13 +11,17 @@ import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
-import letus179.com.biubiu.common.BasicActivity;
 import letus179.com.biubiu.bottomNav.TabDb;
+import letus179.com.biubiu.common.BasicActivity;
+import letus179.com.biubiu.common.SlidingMenu;
+import letus179.com.biubiu.myall.MySettingActivity;
 
-public class MainActivity extends BasicActivity implements TabHost.OnTabChangeListener {
+public class MainActivity extends BasicActivity implements TabHost.OnTabChangeListener, View.OnClickListener {
 
     // 底部导航
     private FragmentTabHost mTabHost;
+
+    private TextView setting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +34,15 @@ public class MainActivity extends BasicActivity implements TabHost.OnTabChangeLi
         initTab();
         //默认选中
         mTabHost.onTabChanged(TabDb.getTabsTxt()[0]);
+
+        initViewAndClick();
+
+        // 从SlidingMenu中打开的“设置”页面，返回时也应该回到原来的界面
+        SlidingMenu slidingMenu = (SlidingMenu) findViewById(R.id.id_menu);
+        String slide_menu = getIntent().getStringExtra("slide_menu");
+        if ("true".equals(slide_menu)) {
+            slidingMenu.toggle();
+        }
     }
 
     @Override
@@ -75,5 +89,26 @@ public class MainActivity extends BasicActivity implements TabHost.OnTabChangeLi
         mTabHost.setOnTabChangedListener(this);
     }
 
+    /**
+     * 初始化View并设置Click事件
+     */
+    private void initViewAndClick() {
+        setting = (TextView) findViewById(R.id.setting);
+        setting.setOnClickListener(this);
+    }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.setting:
+                Intent intent = new Intent(MainActivity.this, MySettingActivity.class);
+                intent.putExtra("title", "设置");
+                intent.putExtra("slide_menu", "true");
+                startActivity(intent);
+                finish();
+                break;
+            default:
+                break;
+        }
+    }
 }

@@ -20,7 +20,7 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/my_account_safe"
+                android:id="@+id/my_setting_account_safe"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:orientation="horizontal">
@@ -50,7 +50,7 @@
                 android:background="@color/light_gray"/>
 
             <TextView
-                android:id="@+id/my_account_notify"
+                android:id="@+id/my_setting_notify"
                 android:layout_width="match_parent"
                 android:layout_height="15dp"
                 android:layout_margin="15dp"
@@ -66,7 +66,7 @@
                 android:background="@color/light_gray"/>
 
             <TextView
-                android:id="@+id/my_account_blacklist"
+                android:id="@+id/my_setting_blacklist"
                 android:layout_width="match_parent"
                 android:layout_height="15dp"
                 android:layout_margin="15dp"
@@ -91,7 +91,7 @@
                 android:background="@color/light_gray"/>
 
             <TextView
-                android:id="@+id/my_account_address"
+                android:id="@+id/my_setting_address"
                 android:layout_width="match_parent"
                 android:layout_height="15dp"
                 android:layout_margin="15dp"
@@ -130,6 +130,7 @@
                 android:background="@color/light_gray"/>
 
             <TextView
+                android:id="@+id/my_setting_suggestion"
                 android:layout_width="match_parent"
                 android:layout_height="15dp"
                 android:layout_margin="15dp"

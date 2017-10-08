@@ -29,9 +29,9 @@ android {
             def fileName
             if (outputFile != null && outputFile.name.endsWith('.apk')) {
                 if ('release'.equals(variant.buildType.name)) {
-                    fileName = "giveme5-RELEASE${defaultConfig.versionName}.${getTime()}.apk"
+                    fileName = "biubiu-RELEASE${defaultConfig.versionName}.${getTime()}.apk"
                 } else if ('debug'.equals(variant.buildType.name)) {
-                    fileName = "giveme5-DEBUG${defaultConfig.versionName}.${getTime()}.apk"
+                    fileName = "biubiu-DEBUG${defaultConfig.versionName}.${getTime()}.apk"
                 }
                 output.outputFile = new File(outputFile.parent, fileName)
             }

@@ -24,4 +24,10 @@
     <string name="get_back_pwd_tip">系统会发送短信验证码到您的手机号，为了您的资金安全，请尽快查收。</string>
     <string name="setting">设置</string>
     <string name="scan">扫一扫</string>
+
+    <string name="feedback_question_tip">请描述您的问题和意见建议，感谢支持...</string>
+    <string name="feedback_input_phone_num">请输入手机号,可选</string>
+    <string name="feedback_tip">请填写正确的手机号码，以便我们尽快联系到您。</string>
+    <string name="feedback_send">提交反馈</string>
+
 </resources>

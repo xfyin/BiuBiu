@@ -76,6 +76,8 @@
             android:name=".myall.MyAddressNewActivity"
             android:launchMode="singleTask">
         </activity>
+        <activity android:name=".myall.MySuggestionActivity">
+        </activity>
     </application>
 
 </manifest>
