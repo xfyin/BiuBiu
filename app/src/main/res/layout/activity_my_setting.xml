@@ -50,12 +50,13 @@
                 android:background="@color/light_gray"/>
 
             <TextView
+                android:id="@+id/my_account_notify"
                 android:layout_width="match_parent"
                 android:layout_height="15dp"
                 android:layout_margin="15dp"
                 android:drawableRight="@drawable/right_arrow"
                 android:gravity="center_vertical"
-                android:text="消息设置"
+                android:text="消息通知"
                 android:textSize="12sp"/>
 
 

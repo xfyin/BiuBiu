@@ -112,18 +112,27 @@
         android:background="@color/light_gray"/>
 
     <LinearLayout
+        android:id="@+id/my_account_social_qq"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_margin="15dp">
+        android:layout_margin="15dp"
+        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:drawableLeft="@drawable/scan"
             android:drawablePadding="10dp"
-            android:drawableRight="@drawable/setting"
             android:gravity="center_vertical"
             android:text="QQ账号"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/bingding_account"
+            android:gravity="center_vertical"
+            android:textSize="10sp"/>
     </LinearLayout>
 
     <View
@@ -134,16 +143,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_margin="15dp">
+        android:layout_margin="15dp"
+        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:drawableLeft="@drawable/scan"
             android:drawablePadding="10dp"
-            android:drawableRight="@drawable/setting"
             android:gravity="center_vertical"
             android:text="微信账号"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/bingding_account"
+            android:gravity="center_vertical"
+            android:textSize="10sp"/>
     </LinearLayout>
 
     <View
@@ -154,16 +171,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_margin="15dp">
+        android:layout_margin="15dp"
+        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:drawableLeft="@drawable/scan"
             android:drawablePadding="10dp"
-            android:drawableRight="@drawable/setting"
             android:gravity="center_vertical"
             android:text="新浪微博"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/bingding_account"
+            android:gravity="center_vertical"
+            android:textSize="10sp"/>
     </LinearLayout>
 
     <View

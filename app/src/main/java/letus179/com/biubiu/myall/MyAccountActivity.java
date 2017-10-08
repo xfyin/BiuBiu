@@ -13,8 +13,8 @@ import letus179.com.biubiu.common.Constants;
 
 public class MyAccountActivity extends BasicActivity implements View.OnClickListener{
 
-    // 绑定手机号, 修改密码
-    private LinearLayout my_account_phone, my_account_pwd;
+    // 绑定手机号, 修改密码, 社交账号绑定（QQ）
+    private LinearLayout my_account_phone, my_account_pwd, my_account_social_qq;
 
     // 绑定的手机号显示 “去绑定或者更滑号码”， 展示绑定的手机号
     private TextView my_account_phone_bingding, my_account_phone_show;
@@ -65,6 +65,8 @@ public class MyAccountActivity extends BasicActivity implements View.OnClickList
                 intent.putExtra("title", "修改密码");
                 startActivity(intent);
                 break;
+            case R.id.my_account_social_qq:
+                break;
             default:
                 break;
         }
@@ -97,6 +99,9 @@ public class MyAccountActivity extends BasicActivity implements View.OnClickList
         // 密码
         my_account_pwd = (LinearLayout) findViewById(R.id.my_account_pwd);
         my_account_pwd.setOnClickListener(this);
+
+        my_account_social_qq = (LinearLayout) findViewById(R.id.my_account_social_qq);
+        my_account_social_qq.setOnClickListener(this);
 
     }
 }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import letus179.com.biubiu.R;
 import letus179.com.biubiu.common.BasicActivity;
@@ -13,6 +14,9 @@ public class MySettingActivity extends BasicActivity implements View.OnClickList
 
     // 我的账户与安全
     private LinearLayout my_account_safe;
+
+    // 消息通知
+    private TextView my_account_notify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,10 @@ public class MySettingActivity extends BasicActivity implements View.OnClickList
                 intent.putExtra("title", "账户与安全");
                 startActivity(intent);
                 break;
+            case R.id.my_account_notify:
+                intent = new Intent(MySettingActivity.this, MyNotifyActivity.class);
+                intent.putExtra("title", "消息通知");
+                startActivity(intent);
             default:
                 break;
         }
@@ -56,8 +64,9 @@ public class MySettingActivity extends BasicActivity implements View.OnClickList
      */
     private void initViewAndClick() {
         my_account_safe = (LinearLayout) findViewById(R.id.my_account_safe);
-
+        my_account_notify = (TextView) findViewById(R.id.my_account_notify);
         my_account_safe.setOnClickListener(this);
+        my_account_notify.setOnClickListener(this);
     }
 
 }

@@ -52,9 +52,17 @@
             android:name=".myall.MyAccountPhoneActivity"
             android:launchMode="singleTask">
         </activity>
-        <activity android:name=".myall.MyAccountPhoneChangeActivity">
+        <activity
+            android:name=".myall.MyAccountPhoneChangeActivity"
+            android:launchMode="singleTask">
         </activity>
-        <activity android:name=".myall.MyAccountPwdActivity">
+        <activity
+            android:name=".myall.MyAccountPwdActivity"
+            android:launchMode="singleTask">
+        </activity>
+        <activity
+            android:name=".myall.MyNotifyActivity"
+            android:launchMode="singleTask">
         </activity>
     </application>
 

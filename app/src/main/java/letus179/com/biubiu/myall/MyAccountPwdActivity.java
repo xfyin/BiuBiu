@@ -111,7 +111,7 @@ public class MyAccountPwdActivity extends BasicActivity implements View.OnClickL
                 }
                 break;
             case R.id.my_account_pwd_send:
-                // TODO: 2017/10/8  
+                // TODO: 2017/10/8
                 // 1.校验原密码
                 String oldPwd = my_account_pwd_old.getText().toString();
                 //2.两次输入的新密码是否一致
